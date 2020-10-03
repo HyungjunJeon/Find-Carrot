@@ -67,6 +67,7 @@ function finishGame(win) {
     playSound(bugSound);
   }
   stopGameTimer();
+  stopSound(bgSound);
   showPopUpWithText(win ? "YOU WON 🎉" : "YOU LOST 💩");
 }
 
@@ -119,6 +120,7 @@ function hidePopUp() {
 }
 
 function initGame() {
+  score = 0;
   field.innerHTML = "";
   gameScore.innerText = CARROT_COUNT;
   // Create bugs & carrots and add to field

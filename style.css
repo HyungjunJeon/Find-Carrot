@@ -48,6 +48,8 @@ button {
   font-size: 32px;
   margin-top: 8px;
   visibility: hidden;
+  user-select: none;
+  cursor: auto;
 }
 
 .game__score {
@@ -61,6 +63,8 @@ button {
   text-align: center;
   color: white;
   visibility: hidden;
+  user-select: none;
+  cursor: auto;
 }
 
 .game__field {
