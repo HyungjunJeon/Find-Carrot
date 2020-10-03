@@ -6,6 +6,43 @@ const BUG_COUNT = 5;
 
 const field = document.querySelector(".game__field");
 const fieldRect = field.getBoundingClientRect();
+const gameBtn = document.querySelector(".game__button");
+const gameTimer = document.querySelector(".game__timer");
+const gameScore = document.querySelector(".game__score");
+
+let started = false;
+let score = 0;
+let timer = undefined;
+
+gameBtn.addEventListener("click", () => {
+  if (started) {
+    stopGame();
+  } else {
+    startGame();
+  }
+  started = !started;
+});
+
+function startGame() {
+  initGame();
+  showStopButton();
+  showTimerAndScore();
+  startGameTimer();
+}
+
+function stopGame() {}
+
+function showStopButton() {
+  const icon = gameBtn.querySelector(".fas");
+  icon.classList.add("fa-stop");
+  icon.classList.remove("fa-play");
+  gameBtn.style.visibility = "visible";
+}
+
+function showTimerAndScore() {
+  gameTimer.style.visibility = "visible";
+  gameScore.style.visibility = "visible";
+}
 
 function initGame() {
   field.innerHTML = "";
